@@ -1,0 +1,13 @@
+{
+  "name": "play-sound",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "go run main.go private/sound.wav",
+    "build": "go build -o dist/production/ -ldflags='-s -w' -trimpath",
+    "buildDev": "go build -o dist/development/",
+    "buildWindowsAll": "GOOS=windows GOARCH=amd64 GOAMD64=v1 go build -o dist/production_windows_amd64-v1/$npm_package_name.exe -ldflags='-s -w' -trimpath && upx --best --ultra-brute dist/production_windows_amd64-v1/$npm_package_name.exe -o dist/production_windows_amd64-v1/$npm_package_name-compressed.exe && GOOS=windows GOARCH=amd64 GOAMD64=v2 go build -o dist/production_windows_amd64-v2/$npm_package_name.exe -ldflags='-s -w' -trimpath && upx --best --ultra-brute dist/production_windows_amd64-v2/$npm_package_name.exe -o dist/production_windows_amd64-v2/$npm_package_name-compressed.exe && GOOS=windows GOARCH=amd64 GOAMD64=v3 go build -o dist/production_windows_amd64-v3/$npm_package_name.exe -ldflags='-s -w' -trimpath && upx --best --ultra-brute dist/production_windows_amd64-v3/$npm_package_name.exe -o dist/production_windows_amd64-v3/$npm_package_name-compressed.exe && GOOS=windows GOARCH=amd64 GOAMD64=v4 go build -o dist/production_windows_amd64-v4/$npm_package_name.exe -ldflags='-s -w' -trimpath && upx --best --ultra-brute dist/production_windows_amd64-v4/$npm_package_name.exe -o dist/production_windows_amd64-v4/$npm_package_name-compressed.exe",
+    "test": "go test",
+    "env": "env | sort && go env | sort"
+  },
+  "type": "module"
+}
